@@ -1,0 +1,44 @@
+<script>
+    'use strict';
+    //create variables with 3 different data types and console
+    console.log(a);//undefined
+    // console.log(b); //Cannot access 'b' before initialization
+    //console.log(c);//Cannot access 'c' before initialization
+
+    var a = 2;
+    const b = 2;
+    let c = 2;
+
+    //create function declaration and function expression and arrow for addition
+
+    console.log(`addition is: ${addDecl(2, 3)}`);
+    // addArrow(2,3);//'addArrow' before initialization
+    // addExp(2,3);//Cannot access 'addExp' before initialization
+    function addDecl(x, y) {
+        return x + y;
+    }
+    const addExp = function (x, y) {
+        return x + y;
+    }
+
+    const addArrow = add => x + y;
+
+    //pitfall of hoisting eg. deleteShopping cart();
+    if (!items) {
+        deleteShoppingCart();
+    }
+    var items = 10;
+    function deleteShoppingCart() {
+        console.log("All items in a cart are deleted");
+    }
+
+    //variable declared with a var will create a property in global window
+
+    var x = 1;
+    const y = 2;
+    let z = 3;
+
+    console.log(x === window.x);
+    console.log(y === window.y);
+    console.log(z === window.z);
+</script>

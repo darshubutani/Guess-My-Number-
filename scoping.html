@@ -1,0 +1,37 @@
+<script>
+    'use strict';
+
+    //create a global variable firstName and use it inside a function
+    const firstName = "Darshna";
+
+    //create a function calcAge
+    function calcAge(birthYear) {
+        const age = 2022 - birthYear;
+
+        //create function printAge inside  calcAge and print" You are 23, born in 1999 "
+        function printAge() {
+            console.log(`${firstName} ,you are ${age},born in ${birthYear}`);
+            //in printAge use block scope using if else (check whether you are millenial or not '1981 to 1996') & also create another firstName variable inside the block and check
+            if (birthYear > 1981 && birthYear < 1996) {
+                const firstName = "Darsh";
+                //var is not a block scope
+                var print = `${firstName} ,You are millenial`;
+                console.log(print);
+                // functions are also block scoped, only in strict mode 
+                function add(a, b) {
+                    let c = a + b;
+                    console.log("addition is:" + c)
+                    return c;
+                }
+            }
+           // add(2, 3);//on strictmode add is not defined otherwise its work
+            console.log(print);//var is not a block scope
+        }
+        printAge();
+        return age;
+    }
+    calcAge(1995);
+//use age outside the function and see & printAge()
+//console.log (age); //age is not defined
+//printAge();//printAge is not defined
+</script>
