@@ -37,7 +37,7 @@ document.querySelector(".check").addEventListener("click", function () {
     }
   } else if (guess > 20 || guess < 0) {
     document.querySelector(".guess").value = "";
-    displayMessage("🛑 Please Enter valid Input! ");
+    displayMessage("🛑 Please Enter valid Input! (0 - 20)");
   } else if (guess !== secretNumber) {
     const value =
       guess < secretNumber
