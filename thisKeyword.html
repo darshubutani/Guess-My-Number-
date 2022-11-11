@@ -1,0 +1,39 @@
+<script>
+    'use strict';
+    //this in global scope
+    console.log(this);
+    //inside regular function call
+    const calcAge = function(birthYear){
+       console.log(2022 - birthYear);
+       console.log("'this' Inside regular function call: "+this); 
+    }
+    calcAge(1995);
+
+    //inside arrow function call
+    const calcAgeArrow = birthYear => {
+        console.log(2022 - birthYear);
+        console.log("'this' Inside arrow function "+this); 
+    }
+    calcAgeArrow(2000);
+
+    //inside a object method
+    const darshna = {
+        birthYear : 1995,
+        calcAge : function (birthYear){
+            console.log("'this' inside a object method :"+this);
+            console.log(2022 - this.birthYear);
+        },        
+    };
+    darshna.calcAge(); 
+
+    //method borrowing
+    const darsh ={
+        birthYear : 2000,
+    }
+    darsh.calcAge = darshna.calcAge ;
+
+    console.log(darsh.calcAge());
+
+
+
+</script>
